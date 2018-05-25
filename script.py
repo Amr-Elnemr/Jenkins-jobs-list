@@ -25,7 +25,7 @@ for job in jobs:
 	if(color == 'blue'):
 		lastBuildNumber = server.get_job_info(job['fullname'])['lastBuild']['number']
 		lastbuild = server.get_build_info(job['fullname'], lastBuildNumber)
-		lastbuild_time = datetime.datetime.fromtimestamp(int(lastbuild['timestamp']*0.001)).strftime('%Y-%m-%d %H:%M:%S')
+		lastbuild_time = datetime.datetime.fromtimestamp(int(lastbuild['timestamp']*0.001))
 		status = "Success"
 
 	elif(color == 'notbuilt'):
